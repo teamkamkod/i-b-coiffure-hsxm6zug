@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez I.B Coiffure, salon de coiffure chaleureux à Nantes. Coupes, coiffage, conseils personnalisés. Prenez rendez-vous au 02 40 47 94 67.">
+    <title>I.B Coiffure | Salon de coiffure à Nantes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c9a227;
+            --background: #f5f0e6;
+            --text: #2b2b2b;
+            --cta: #c9a227;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --radius: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 26, 26, 0.98);
+            z-index: 1000;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.4rem;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav .logo {
+                font-size: 1.2rem;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: rgba(26, 26, 26, 0.99);
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('assets/hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: #fff;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cta);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cta);
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--cta);
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 767px) {
+            #hero {
+                height: 80vh;
+                margin-top: 50px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+        }
+
+        /* Sections générales */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        section > p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        #apropos {
+            background-color: #fff;
+        }
+
+        #apropos p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            max-width: 800px;
+        }
+
+        /* Featured Menu (Services) */
+        #services {
+            background-color: var(--background);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--secondary);
+            border-left: 2px solid var(--secondary);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid var(--secondary);
+            border-right: 2px solid var(--secondary);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Customer Reviews */
+        #avis {
+            background-color: #fff;
+        }
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            background-color: var(--background);
+            padding: 2rem;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .review-card::before {
+            content: '💬';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .stars {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Gallery Preview */
+        #galerie {
+            background-color: var(--background);
+        }
+
+        .gallery-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .gallery-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-carousel::-webkit-scrollbar-track {
+            background: #e0e0e0;
+        }
+
+        .gallery-carousel::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+        }
+
+        .gallery-item {
+            flex: 0 0 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--secondary);
+            border-left: 2px solid var(--secondary);
+            z-index: 10;
+        }
+
+        @media (max-width: 767px) {
+            .gallery-item {
+                flex: 0 0 250px;
+                height: 250px;
+            }
+        }
+
+        /* Hours & Location */
+        #horaires {
+            background-color: #fff;
+        }
+
+        .hours-location-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .hours-table {
+            width: 100%;
+        }
+
+        .hours-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table th,
+        .hours-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hours-table th {
+            background-color: var(--background);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hours-table td {
+            font-size: 0.95rem;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .location-info p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .location-info strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #e0e0e0;
+            margin-top: 1rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 767px) {
+            .hours-location-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+        }
+
+        /* Contact Form */
+        #contact {
+            background-color: var(--background);
+        }
+
+        .contact-wrapper {
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-cta {
+            background-color: var(--cta);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border: 2px solid var(--cta);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
+            width: 100%;
+        }
+
+        .contact-cta:hover {
+            background-color: transparent;
+            color: var(--cta);
+        }
+
+        .contact-phone {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .contact-phone p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-phone a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-phone a:hover {
+            text-decoration: underline;
+        }
+
+        /* Trust Signals */
+        #confiance {
+            background-color: #fff;
+        }
+
+        .trust-content {
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+
+        .trust-rating {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--background);
+        }
+
+        .rating-stars {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            letter-spacing: 0.3rem;
+        }
+
+        .rating-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .rating-count {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .trust-signals-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .trust-item {
+            padding: 1.5rem;
+            background-color: var(--background);
+            border-left: 4px solid var(--secondary);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .trust-item::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .trust-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 767px) {
+            .trust-signals-list {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-rating {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">I.B Coiffure</a>
+        <ul id="nav-menu">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#avis">Avis</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#horaires">Horaires</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>I.B Coiffure – Votre salon de coiffure à Nantes</h1>
+            <p>Au cœur de Nantes, I.B Coiffure vous accueille dans une ambiance chaleureuse et professionnelle. Isabelle, coiffeuse passionnée, met son savoir-faire à votre service pour des coupes et des coiffages qui vous ressemblent.</p>
+            <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos">
+        <h2>Un salon convivial, une coiffeuse à l'écoute</h2>
+        <p>Chez I.B Coiffure, nous croyons que la coiffure est un moment de détente et de confiance. Notre salon, situé 13 Place de la République à Nantes, vous offre un cadre calme et chaleureux. Isabelle vous accueille avec attention, prend le temps de comprendre vos envies et vous conseille avec sincérité. Que ce soit pour une coupe classique, une mise en beauté ou une première coupe pour bébé, vous êtes entre de bonnes mains.</p>
+    </section>
+
+    <!-- Featured Menu (Services) -->
+    <section id="services">
+        <h2>Nos services</h2>
+        <p>Nous proposons une gamme complète de services de coiffure pour femmes, hommes et enfants. Chaque prestation est réalisée sur mesure, avec des produits de qualité et un souci du détail.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Coupe femme</h3>
+                <p>Coupe, shampooing et coiffage personnalisés.</p>
+            </div>
+            <div class="service-card">
+                <h3>Coupe homme</h3>
+                <p>Coupe nette et style adapté à votre morphologie.</p>
+            </div>
+            <div class="service-card">
+                <h3>Coupe enfant</h3>
+                <p>Une approche douce et patiente pour les plus petits.</p>
+            </div>
+            <div class="service-card">
+                <h3>Coloration & soins</h3>
+                <p>Colorations, reflets et soins profonds pour des cheveux éclatants.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="avis">
+        <h2>Ils nous font confiance</h2>
+        <p>La satisfaction de nos clients est notre plus belle récompense. Voici quelques avis récents :</p>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Salon de coiffure au calme avec un accueil très chaleureux, une coiffeuse à l'écoute et impliquée, le tout avec des prix corrects. Je recommande :)"</p>
+                <p class="review-author">Alicia Marechal</p>
+                <p class="review-date">il y a 2 mois</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Première coupe de notre bébé, un vrai succès ! Coiffeuse super douce et patiente. Résultat impeccable."</p>
+                <p class="review-author">Anne-Sophie Sbl</p>
+                <p class="review-date">il y a 3 mois</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Un accueil excellent et toujours chaleureux, je vous recommande ce salon !"</p>
+                <p class="review-author">Tyb</p>
+                <p class="review-date">il y a 5 mois</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section id="galerie">
+        <h2>Nos réalisations</h2>
+        <p>Découvrez quelques-unes de nos créations, dans une ambiance chaleureuse et lumineuse.</p>
+        <div class="gallery-carousel">
+            <div class="gallery-item">
+                <img src="assets/gallery-1.jpg" alt="Réalisation coiffure 1">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/gallery-2.jpg" alt="Réalisation coiffure 2">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/hero.jpg" alt="Réalisation coiffure 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section id="horaires">
+        <h2>Horaires & Accès</h2>
+        <p>I.B Coiffure vous accueille du mardi au samedi. Nous sommes situés au 13 Place de la République, 44200 Nantes.</p>
+        <div class="hours-location-wrapper">
+            <div class="hours-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jour</th>
+                            <th>Horaires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lundi</td>
+                            <td>Fermé</td>
+                        </tr>
+                        <tr>
+                            <td>Mardi</td>
+                            <td>09:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Mercredi</td>
+                            <td>09:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jeudi</td>
+                            <td>09:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Vendredi</td>
+                            <td>09:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Samedi</td>
+                            <td>08:00 – 17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Dimanche</td>
+                            <td>Fermé</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="location-info">
+                <div>
+                    <strong>Adresse</strong>
+                    <p>13 Pl. de la République<br>44200 Nantes, France</p>
+                </div>
+                <div>
+                    <strong>Téléphone</strong>
+                    <p><a href="tel:+33240479467">+33 2 40 47 94 67</a></p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2747.8234567890123!2d-1.5536!3d47.2199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805eea6e6e6e6e7%3A0x1234567890abcdef!2s13%20Pl.%20de%20la%20R%C3%A9publique%2C%2044200%20Nantes!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute demande de rendez-vous ou d'information, n'hésitez pas à nous appeler ou à nous écrire. Nous vous répondrons avec plaisir.</p>
+        <div class="contact-wrapper">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service demandé</label>
+                    <input type="text" id="service" name="service" placeholder="Ex: Coupe femme, Coloration...">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="contact-cta">Envoyer ma demande</button>
+            </form>
+            <div class="contact-phone">
+                <p><strong>Ou appelez-nous directement :</strong></p>
+                <a href="tel:+33240479467">02 40 47 94 67</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section id="confiance">
+        <h2>Pourquoi choisir I.B Coiffure ?</h2>
+        <div class="trust-content">
+            <div class="trust-rating">
+                <div class="rating-stars">★★★★★</div>
+                <div>
+                    <div class="rating-text">4,8 / 5</div>
+                    <div class="rating-count">Basé sur 112 avis</div>
+                </div>
+            </div>
+            <div class="trust-signals-list">
+                <div class="trust-item">
+                    <p>Accueil sans rendez-vous possible</p>
+                </div>
+                <div class="trust-item">
+                    <p>Équipe expérimentée et passionnée</p>
+                </div>
+                <div class="trust-item">
+                    <p>Produits professionnels de qualité</p>
+                </div>
+                <div class="trust-item">
+                    <p>Paiement par carte accepté</p>
+                </div>
+                <div class="trust-item">
+                    <p>Proche du parking et transports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>I.B Coiffure – 13 Pl. de la République, 44200 Nantes – Tél : 02 40 47 94 67</p>
+        <p>© 2026 I.B Coiffure. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const burgerMenu = document.getElementById('burger-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards, review cards, and trust items
+        document.querySelectorAll('.service-card, .review-card, .gallery-item, .trust-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Ensure nav menu is closed on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                navMenu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
